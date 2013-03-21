@@ -4,14 +4,28 @@ gem 'rails', '3.2.12'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
+group :development do
+	gem 'sqlite3'
+	gem 'rspec-rails', '2.6.1', :require=> 'rspec-rails'
+	gem 'faker', '0.3.1'
+end
 
-gem "sqlite3", :groups => [:development, :test]
-gem "pg", groups => [:production]
+group :test do
+	gem 'sqlite3'
+	gem 'rspec-rails', '2.6.1', :require=> 'rspec-rails'
+	gem 'webrat', '0.7.1'
+	gem 'factory_girl_rails', '1.0'
+	gem 'turn', :require => false
+end
+
+group :production do
+	gem 'pg'
+end
 
 
 # Gems used only for assets and not required
 # in production environments by default.
-group :assets do
+group :assets do 
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
@@ -22,17 +36,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
-group :test do 
-gem 'rspec-rails', '2.6.1', :require => 'rspec-rails'
-# gem 'test-unit'
-gem 'webrat', '0.7.1'
-gem 'factory_girl_rails', '1.0'
-# Pretty printed test output
-gem 'turn', :require => false
-end
-
-
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
