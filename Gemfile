@@ -22,7 +22,8 @@ end
 
 gem 'jquery-rails'
 
-group :test dogem 'sqlite'
+group :test do 
+gem 'sqlite3'
 gem 'rspec-rails', '2.6.1', :require => 'rspec-rails'
 # gem 'test-unit'
 gem 'webrat', '0.7.1'
